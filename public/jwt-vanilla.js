@@ -14,7 +14,7 @@ function getToken() {
     var init = {
         method : 'POST',
         headers : header,
-        body: JSON.stringify({name: user, password})
+        body: JSON.stringify({name: user, password}),
     }
     fetch(loginUrl, init)
     .then(res => {
@@ -27,6 +27,9 @@ function getToken() {
     })
     .then(res => {
         tokenElement.innerText = res.token;
+    })
+    .catch(err => {
+        console.error(err);
     })
 
 }

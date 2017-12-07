@@ -84,6 +84,7 @@ app.get("/", function(req, res) {
 app.post("/login", (req, res) => {
     console.log(req.headers);
     console.log(req.body);
+    console.log(req.query);
     if (req.body.name && req.body.password) {
         var {name, password} = req.body;
     }
